@@ -2,6 +2,21 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans:"Space Grotesk",-apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+  --hz-bg: #0B0B0F;
+  --hz-surface: #16181D;
+  --hz-border: rgba(255,255,255,0.08);
+
+  --hz-primary: #FF8A00;
+  --hz-secondary: #FFB547;
+
+  --hz-text: #FFFFFF;
+  --hz-muted: #A1A1AA;
+
+  --hz-success: #22C55E;
+  --hz-danger: #EF4444;
 }

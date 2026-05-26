@@ -155,7 +155,7 @@ export default function FastingTimer({
             {/* Visual Header */}
             <div className={`flex items-center gap-1.5 px-3 py-1 rounded-full border text-xs font-semibold mb-4 animate-pulse ${activeTheme.badge}`}>
               <Flame className="w-3.5 h-3.5" />
-              <span>ACTIVE FASTING INDUCTION</span>
+              <span>FASTING IN PROGRESS</span>
             </div>
 
             {/* Circular Timer Display */}
@@ -175,9 +175,7 @@ export default function FastingTimer({
                   cy="50"
                   r="44"
                   className={`stroke-gradient transition-all duration-1000 ${
-                    activeTheme.id === 'charcoal' ? 'stroke-orange-500' :
-                    activeTheme.id === 'midnight' ? 'stroke-indigo-500' :
-                    activeTheme.id === 'forest' ? 'stroke-emerald-500' : 'stroke-purple-500'
+                    'stroke-[#FF8A00]'
                   }`}
                   strokeWidth="6.5"
                   fill="transparent"
@@ -196,7 +194,8 @@ export default function FastingTimer({
                   {formatTimeStr(elapsedSeconds)}
                 </span>
                 <span className={`inline-block text-[11px] font-bold px-2 py-0.5 rounded ${
-                  progressPercent >= 100 ? 'bg-emerald-500/20 text-emerald-400' : 'bg-orange-500/10 text-orange-400'
+                  progressPercent >= 100? 'bg-[#22C55E]/20 text-[#22C55E]'
+: 'bg-[#FF8A00]/15 text-[#FF8A00]'
                 }`}>
                   {progressPercent.toFixed(1)}% Done
                 </span>
@@ -207,7 +206,7 @@ export default function FastingTimer({
             </div>
 
             {/* Time Indicators (Start vs Target End) */}
-            <div className="grid grid-cols-2 gap-4 w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-center mb-4 text-xs">
+            <div className="grid grid-cols-2 gap-4 w-full bg-slate-900 border border-white/10 rounded-xl p-3 text-center mb-4 text-xs">
               <div>
                 <span className="block text-slate-400 mb-0.5">Started Fast</span>
                 <span className="font-semibold text-slate-200">
@@ -229,7 +228,7 @@ export default function FastingTimer({
                 <span>{currentStage.title}</span>
               </div>
               <p className="text-slate-300 leading-normal">{currentStage.desc}</p>
-              <div className="mt-2 pt-2 border-t border-slate-800/40 text-[11px] text-slate-400 flex items-center justify-between">
+              <div className="mt-2 pt-2 border-t border-white/10/40 text-[11px] text-slate-400 flex items-center justify-between">
                 <span>Active Target Benefit:</span>
                 <span className="font-bold text-white">{currentStage.benefit}</span>
               </div>
@@ -237,7 +236,7 @@ export default function FastingTimer({
 
             {/* Adjust Started Time Button */}
             {isEditingTime ? (
-              <div className="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 mb-4 space-y-2">
+              <div className="w-full bg-slate-900 border border-white/10 rounded-xl p-3 mb-4 space-y-2">
                 <span className="block text-xs font-semibold text-slate-300">
                   Did you forget to start the timer?
                 </span>
@@ -250,7 +249,7 @@ export default function FastingTimer({
                     value={editMinutesBack}
                     id="edit-time-mins"
                     onChange={(e) => setEditMinutesBack(e.target.value)}
-                    className="w-full bg-slate-950 border border-slate-800 px-2 py-1 text-xs rounded"
+                    className="w-full bg-slate-950 border border-white/10 px-2 py-1 text-xs rounded"
                     placeholder="Minutes eg. 60"
                   />
                   <button
@@ -273,7 +272,7 @@ export default function FastingTimer({
               <button
                 onClick={() => setIsEditingTime(true)}
                 id="edit-start-time-btn"
-                className="text-slate-400 hover:text-white text-xs flex items-center gap-1 px-3 py-1 bg-slate-900/50 hover:bg-slate-900 border border-slate-800/60 rounded-full mb-6 cursor-pointer"
+                className="text-slate-400 hover:text-white text-xs flex items-center gap-1 px-3 py-1 bg-slate-900/50 hover:bg-slate-900 border border-white/10/60 rounded-full mb-6 cursor-pointer"
               >
                 <Edit2 className="w-3 h-3" />
                 <span>Log earlier start time</span>
@@ -298,7 +297,7 @@ export default function FastingTimer({
                         checked={earlyConfirm}
                         id="early-confirm-chk"
                         onChange={(e) => setEarlyConfirm(e.target.checked)}
-                        className="rounded border-slate-800 bg-slate-950 text-orange-500 focus:ring-0"
+                        className="rounded border-white/10 bg-slate-950 text-orange-500 focus:ring-0"
                       />
                       <span>Confirm early break</span>
                     </label>
@@ -318,7 +317,7 @@ export default function FastingTimer({
                       value={endWeight}
                       id="end-weight-input"
                       onChange={(e) => setEndWeight(e.target.value)}
-                      className="w-20 bg-slate-950 border border-slate-800 text-center py-1 rounded font-bold"
+                      className="w-20 bg-slate-950 border border-white/10 text-center py-1 rounded font-bold"
                     />
                   </div>
                   <div>
@@ -330,7 +329,7 @@ export default function FastingTimer({
                       value={fastNotes}
                       id="fast-notes-textarea"
                       onChange={(e) => setFastNotes(e.target.value)}
-                      className="w-full h-14 bg-slate-950 border border-slate-800 p-2 rounded text-xs"
+                      className="w-full h-14 bg-slate-950 border border-white/10 p-2 rounded text-xs"
                     />
                   </div>
                 </div>
@@ -340,7 +339,7 @@ export default function FastingTimer({
                     disabled={elapsedSeconds < targetSeconds && !earlyConfirm}
                     onClick={executeEndFast}
                     id="confirm-end-fast"
-                    className="flex-grow py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 disabled:opacity-50 text-white font-bold cursor-pointer"
+                    className="flex-grow py-2 rounded-lg bg-[#FF8A00] hover:bg-[#FF9F26] disabled:opacity-50 text-white font-bold cursor-pointer"
                   >
                     Log Complete
                   </button>
@@ -369,11 +368,11 @@ export default function FastingTimer({
           <div className="w-full flex flex-col items-center max-w-sm">
             <div className="flex items-center gap-1 text-blue-400 bg-blue-900/10 border border-blue-800/20 px-3 py-1 rounded-full text-xs font-semibold mb-6">
               <Moon className="w-3.5 h-3.5" />
-              <span>OFFLINE READY EATING WINDOW</span>
+              <span>READY TO BEGIN FAST</span>
             </div>
 
             {/* Circular Base Selector Visual */}
-            <div className="relative w-60 h-60 flex items-center justify-center border-4 border-dashed border-slate-800 rounded-full mb-6">
+            <div className="relative w-60 h-60 flex items-center justify-center border-4 border-dashed border-white/10 rounded-full mb-6">
               <div className="text-center">
                 <Flame className="w-12 h-12 text-slate-600 mx-auto mb-2 animate-bounce" />
                 <span className="block text-[10px] text-slate-500 uppercase tracking-widening font-bold">
@@ -402,8 +401,8 @@ export default function FastingTimer({
                     id={`timer-proto-${p.id}`}
                     className={`flex flex-col items-center justify-center py-2.5 px-2 rounded-xl border text-center transition-all ${
                       selectedProtoId === p.id
-                        ? `border-white ${activeTheme.cardBg} font-bold ring-1 ring-white/10`
-                        : 'border-slate-800 bg-slate-900/60 hover:bg-slate-900'
+                        ? `border-white/10 ${activeTheme.cardBg} font-bold ring-1 ring-white/10`
+                        : 'border-white/10 bg-slate-900/60 hover:bg-slate-900'
                     }`}
                   >
                     <span className="text-sm font-black text-white">{p.name.split(' ')[0]}</span>
@@ -418,21 +417,21 @@ export default function FastingTimer({
               <button
                 onClick={() => handleStartWithOffset(0)}
                 id="start-offset-now"
-                className="bg-slate-900 hover:bg-slate-850 text-[11px] font-semibold py-1.5 px-2 rounded border border-slate-800 cursor-pointer"
+                className="bg-slate-900 hover:bg-slate-850 text-[11px] font-semibold py-1.5 px-2 rounded border border-white/10 cursor-pointer"
               >
                 Start Now
               </button>
               <button
                 onClick={() => handleStartWithOffset(60)}
                 id="start-offset-1h"
-                className="bg-slate-900 hover:bg-slate-850 text-[11px] text-center font-semibold py-1.5 px-1 rounded border border-slate-800 cursor-pointer"
+                className="bg-slate-900 hover:bg-slate-850 text-[11px] text-center font-semibold py-1.5 px-1 rounded border border-white/10 cursor-pointer"
               >
                 Fasting for 1h
               </button>
               <button
                 onClick={() => handleStartWithOffset(120)}
                 id="start-offset-2h"
-                className="bg-slate-900 hover:bg-slate-850 text-[11px] font-semibold py-1.5 px-1.5 rounded border border-slate-800 cursor-pointer"
+                className="bg-slate-900 hover:bg-slate-850 text-[11px] font-semibold py-1.5 px-1.5 rounded border border-white/10 cursor-pointer"
               >
                 Fasting for 2h
               </button>
@@ -445,14 +444,14 @@ export default function FastingTimer({
               className={`w-full bg-gradient-to-r ${activeTheme.accentGradient} py-3.5 px-6 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-xl ${activeTheme.glow} active:scale-98 transition-all cursor-pointer`}
             >
               <Play className="w-4 h-4 fill-white" />
-              <span>Initiate Fasting Window</span>
+              <span>Start Fast</span>
             </button>
           </div>
         )}
       </div>
 
       {/* Basic biochemical details footer helper */}
-      <div className="bg-slate-900/60 border-t border-slate-800/80 p-4">
+      <div className="bg-slate-900/60 border-t border-white/10/80 p-4">
         <h4 className="text-xs font-semibold text-slate-300 flex items-center gap-1 mb-1.5">
           <HelpCircle className="w-3.5 h-3.5 text-cyan-400" />
           <span>Biological Adaptations of {currentProto.name}</span>

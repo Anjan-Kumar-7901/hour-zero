@@ -89,27 +89,27 @@ export default function MealsNoting({
   };
 
   return (
-    <div id="meals-noting-tab" className="p-4 bg-slate-950 text-white scrollbar-thin overflow-y-auto h-full space-y-5">
+    <div id="meals-noting-tab" className="p-4 bg-[#16181D] text-white scrollbar-thin overflow-y-auto h-full space-y-5">
       {/* Dynamic Calories Budget Circular / Bar HUD */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-xl">
+      <div className="bg-slate-900 border border-white/10 rounded-2xl p-4 shadow-xl">
         <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3">
           Daily Nutrients Budget
         </h3>
         
         <div className="grid grid-cols-3 gap-2 text-center mb-4">
-          <div className="bg-slate-950/60 p-2.5 rounded-xl border border-slate-850">
+          <div className="bg-[#16181D]/60 p-2.5 rounded-xl border border-white/10">
             <span className="block text-[10px] text-slate-400 uppercase">CONSUMED</span>
             <span className="text-lg font-black font-mono text-orange-400">{totalCalories}</span>
             <span className="block text-[9px] text-slate-500">kcal</span>
           </div>
-          <div className="bg-slate-950/60 p-2.5 rounded-xl border border-slate-850">
+          <div className="bg-[#16181D]/60 p-2.5 rounded-xl border border-white/10">
             <span className="block text-[10px] text-slate-400 uppercase">REMAINING</span>
             <span className="text-lg font-black font-mono text-slate-100">{caloriesRemaining}</span>
             <span className="block text-[9px] text-slate-500">kcal</span>
           </div>
-          <div className="bg-slate-950/60 p-2.5 rounded-xl border border-slate-850">
+          <div className="bg-[#16181D]/60 p-2.5 rounded-xl border border-white/10">
             <span className="block text-[10px] text-slate-400 uppercase">PROTEIN</span>
-            <span className="text-lg font-black font-mono text-cyan-400">{totalProtein}g</span>
+            <span className="text-lg font-black font-mono text-orange-400">{totalProtein}g</span>
             <span className="block text-[9px] text-slate-500">of raw intake</span>
           </div>
         </div>
@@ -120,7 +120,7 @@ export default function MealsNoting({
             <span className="text-slate-400 font-medium">Daily Calorie Balance</span>
             <span className="text-slate-200 font-bold">{caloriesPercent.toFixed(0)}% used</span>
           </div>
-          <div className="w-full bg-slate-950 rounded-full h-3 overflow-hidden border border-slate-850">
+          <div className="w-full bg-[#16181D] rounded-full h-3 overflow-hidden border border-white/10">
             <div 
               className={`h-full rounded-full transition-all duration-500 ${
                 caloriesPercent > 100 
@@ -138,10 +138,10 @@ export default function MealsNoting({
       </div>
 
       {/* Hydraulic Water Logger */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-xl">
+      <div className="bg-slate-900 border border-white/10 rounded-2xl p-4 shadow-xl">
         <div className="flex justify-between items-center mb-3">
           <div className="flex items-center gap-1.5">
-            <Droplet className="w-4 h-4 text-cyan-400 fill-cyan-400/20" />
+            <Droplet className="w-4 h-4 text-orange-400 fill-cyan-400/20" />
             <h3 className="text-xs font-semibold text-slate-300 uppercase tracking-widest">
               Hydration Balance
             </h3>
@@ -157,9 +157,9 @@ export default function MealsNoting({
 
         <div className="flex items-center gap-4">
           {/* Hydraulic Level Visual */}
-          <div className="relative w-12 h-16 bg-slate-950 border border-slate-800 rounded-xl overflow-hidden flex items-end shrink-0">
+          <div className="relative w-12 h-16 bg-[#16181D] border border-white/10 rounded-xl overflow-hidden flex items-end shrink-0">
             <div 
-              className="w-full bg-gradient-to-t from-cyan-600 to-teal-400 transition-all duration-700"
+              className="w-full bg-gradient-to-t from-[#FF8A00] to-[#FFB547] transition-all duration-700"
               style={{ height: `${waterPercent}%` }}
             />
             <span className="absolute inset-0 flex items-center justify-center font-mono text-[10px] font-bold text-white drop-shadow-md">
@@ -171,14 +171,14 @@ export default function MealsNoting({
           <div className="flex-grow space-y-2">
             <div className="flex justify-between text-xs">
               <span className="text-slate-400">Total water logged today:</span>
-              <span className="font-extrabold text-cyan-400">{totalWater} / {settings.waterTargetMl}ml</span>
+              <span className="font-extrabold text-orange-400">{totalWater} / {settings.waterTargetMl}ml</span>
             </div>
             
             <div className="grid grid-cols-3 gap-2">
               <button
                 onClick={() => onAddWater(250)}
                 id="water-add-250"
-                className="bg-slate-950 text-slate-300 hover:bg-slate-850 border border-slate-800 py-1 rounded text-xs flex flex-col items-center cursor-pointer"
+                className="bg-[#16181D] text-slate-300 hover:bg-[#1B1E24] border border-white/10 py-1 rounded text-xs flex flex-col items-center cursor-pointer"
               >
                 <span className="font-bold">+250ml</span>
                 <span className="text-[8px] text-slate-500 mt-0.5">Glass</span>
@@ -186,7 +186,7 @@ export default function MealsNoting({
               <button
                 onClick={() => onAddWater(500)}
                 id="water-add-500"
-                className="bg-slate-950 text-slate-300 hover:bg-slate-850 border border-slate-800 py-1 rounded text-xs flex flex-col items-center cursor-pointer"
+                className="bg-[#16181D] text-slate-300 hover:bg-[#1B1E24] border border-white/10 py-1 rounded text-xs flex flex-col items-center cursor-pointer"
               >
                 <span className="font-bold">+500ml</span>
                 <span className="text-[8px] text-slate-500 mt-0.5">Swell</span>
@@ -194,7 +194,7 @@ export default function MealsNoting({
               <button
                 onClick={() => onAddWater(1000)}
                 id="water-add-1000"
-                className="bg-slate-950 text-slate-300 hover:bg-slate-850 border border-slate-800 py-1 rounded text-xs flex flex-col items-center cursor-pointer"
+                className="bg-[#16181D] text-slate-300 hover:bg-[#1B1E24] border border-white/10 py-1 rounded text-xs flex flex-col items-center cursor-pointer"
               >
                 <span className="font-bold">+1.0L</span>
                 <span className="text-[8px] text-slate-500 mt-0.5">Bottle</span>
@@ -205,7 +205,7 @@ export default function MealsNoting({
       </div>
 
       {/* Manual Meal Logging Box */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-xl">
+      <div className="bg-slate-900 border border-white/10 rounded-2xl p-4 shadow-xl">
         <h3 className="text-xs font-semibold text-slate-300 uppercase tracking-widest mb-3 flex items-center gap-1.5">
           <Utensils className="w-4 h-4 text-orange-400" />
           <span>Note a Custom Meal</span>
@@ -220,7 +220,7 @@ export default function MealsNoting({
                 value={mealName}
                 id="meal-name-field"
                 onChange={(e) => setMealName(e.target.value)}
-                className="w-full bg-slate-950/80 border border-slate-800 rounded-lg py-2 px-3 text-xs focus:outline-none focus:border-orange-500 transition-colors placeholder:text-slate-600"
+                className="w-full bg-[#16181D]/80 border border-white/10 rounded-lg py-2 px-3 text-xs focus:outline-none focus:border-orange-500 transition-colors placeholder:text-slate-600"
                 required
               />
             </div>
@@ -231,7 +231,7 @@ export default function MealsNoting({
                 value={calories}
                 id="meal-calories-field"
                 onChange={(e) => setCalories(e.target.value)}
-                className="w-full bg-slate-950/80 border border-slate-800 rounded-lg py-2 px-3 text-xs focus:outline-none focus:border-orange-500 transition-colors placeholder:text-slate-600"
+                className="w-full bg-[#16181D]/80 border border-white/10 rounded-lg py-2 px-3 text-xs focus:outline-none focus:border-orange-500 transition-colors placeholder:text-slate-600"
                 required
               />
             </div>
@@ -242,7 +242,7 @@ export default function MealsNoting({
                 value={protein}
                 id="meal-protein-field"
                 onChange={(e) => setProtein(e.target.value)}
-                className="w-full bg-slate-950/80 border border-slate-800 rounded-lg py-2 px-3 text-xs focus:outline-none focus:border-orange-500 transition-colors placeholder:text-slate-600"
+                className="w-full bg-[#16181D]/80 border border-white/10 rounded-lg py-2 px-3 text-xs focus:outline-none focus:border-orange-500 transition-colors placeholder:text-slate-600"
               />
             </div>
             <div className="col-span-3 md:col-span-2">
@@ -250,7 +250,7 @@ export default function MealsNoting({
                 value={mealType}
                 id="meal-type-select"
                 onChange={(e: any) => setMealType(e.target.value)}
-                className="w-full bg-slate-950/80 border border-slate-800 rounded-lg py-2 px-1.5 text-xs text-slate-300 focus:outline-none transition-colors"
+                className="w-full bg-[#16181D]/80 border border-white/10 rounded-lg py-2 px-1.5 text-xs text-slate-300 focus:outline-none transition-colors"
               >
                 <option value="Breakfast">Breakfast</option>
                 <option value="Lunch">Lunch</option>
@@ -272,7 +272,7 @@ export default function MealsNoting({
       </div>
 
       {/* Quick click rapid-add templates */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-xl">
+      <div className="bg-slate-900 border border-white/10 rounded-2xl p-4 shadow-xl">
         <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2.5 flex items-center gap-1.5">
           <Sparkles className="w-3.5 h-3.5 text-amber-400" />
           <span>Quick Log Templates</span>
@@ -288,7 +288,7 @@ export default function MealsNoting({
               key={i}
               onClick={() => handleApplyTemplate(tpl)}
               id={`template-btn-${i}`}
-              className="flex items-center justify-between p-2 rounded-lg bg-slate-950 hover:bg-slate-850 border border-slate-850 text-left transition-all group cursor-pointer"
+              className="flex items-center justify-between p-2 rounded-lg bg-[#16181D] hover:bg-[#1B1E24] border border-white/10 text-left transition-all group cursor-pointer"
             >
               <div className="flex flex-col max-w-[80%]">
                 <span className="text-[11px] font-medium text-slate-200 truncate">{tpl.name}</span>
@@ -296,7 +296,7 @@ export default function MealsNoting({
                   {tpl.calories} kcal • {tpl.protein}g protein
                 </span>
               </div>
-              <div className="w-5 h-5 rounded-full bg-orange-950/20 group-hover:bg-orange-500 border border-slate-800 group-hover:border-transparent flex items-center justify-center transition-colors">
+              <div className="w-5 h-5 rounded-full bg-orange-950/20 group-hover:bg-orange-500 border border-white/10 group-hover:border-transparent flex items-center justify-center transition-colors">
                 <Plus className="w-3 h-3 text-slate-400 group-hover:text-white" />
               </div>
             </button>
@@ -305,7 +305,7 @@ export default function MealsNoting({
       </div>
 
       {/* Today's Meals list logs */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-xl">
+      <div className="bg-slate-900 border border-white/10 rounded-2xl p-4 shadow-xl">
         <h3 className="text-xs font-semibold text-slate-300 uppercase tracking-widest mb-3">
           Today's Food Journal
         </h3>
@@ -321,7 +321,7 @@ export default function MealsNoting({
                 <div className="flex flex-col pr-2">
                   <span className="font-bold text-slate-200">{item.name}</span>
                   <div className="flex items-center gap-1.5 mt-0.5 text-[10px] text-slate-400">
-                    <span className="px-1.5 py-0.2 bg-slate-950 border border-slate-800 rounded-full font-medium text-[9px]">
+                    <span className="px-1.5 py-0.2 bg-[#16181D] border border-white/10 rounded-full font-medium text-[9px]">
                       {item.type}
                     </span>
                     <span>•</span>
@@ -331,7 +331,7 @@ export default function MealsNoting({
                     {item.proteinGrams !== undefined && (
                       <>
                         <span>•</span>
-                        <span className="text-cyan-400 font-mono">{item.proteinGrams}g pro</span>
+                        <span className="text-orange-400 font-mono">{item.proteinGrams}g pro</span>
                       </>
                     )}
                   </div>
@@ -344,7 +344,7 @@ export default function MealsNoting({
                     onClick={() => onDeleteMeal(item.id)}
                     id={`delete-meal-${item.id}`}
                     aria-label="Delete meal log"
-                    className="text-slate-600 hover:text-red-400 p-1 rounded hover:bg-slate-950 transition-colors cursor-pointer"
+                    className="text-slate-600 hover:text-red-500 p-1 rounded hover:bg-[#16181D] transition-colors cursor-pointer"
                   >
                     <Trash2 className="w-3.5 h-3.5" />
                   </button>

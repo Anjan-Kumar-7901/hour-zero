@@ -36,9 +36,9 @@ export default function SplashOpening({ onComplete }: SplashOpeningProps) {
   };
 
   const themesList = [
-    { id: 'charcoal', label: 'Charcoal Orange', color: 'bg-orange-500 border-amber-500' },
+    { id: 'charcoal', label: 'Dark Orange', color: 'bg-orange-500 border-amber-500' },
     { id: 'midnight', label: 'Cosmic Indigo', color: 'bg-indigo-600 border-blue-500' },
-    { id: 'forest', label: 'Forest Emerald', color: 'bg-emerald-600 border-teal-500' },
+    { id: 'forest', label: 'Midnight Emerald', color: 'bg-emerald-600 border-teal-500' },
     { id: 'amethyst', label: 'Crystal Violet', color: 'bg-purple-600 border-fuchsia-500' }
   ] as const;
 
@@ -60,12 +60,12 @@ export default function SplashOpening({ onComplete }: SplashOpeningProps) {
           HourZero
         </h1>
         <p className="text-sm text-slate-400 mt-2 max-w-xs">
-          Your personal premium iOS timing, meal, and progress tracker.
+          Track your fasts, build consistency and stay on target.
         </p>
       </div>
 
       {/* Onboarding form card */}
-      <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 shadow-2xl backdrop-blur-md mb-6 flex-grow flex flex-col justify-center">
+      <div className="bg-slate-900/80 border border-white/10 rounded-2xl p-5 shadow-2xl backdrop-blur-md mb-6 flex-grow flex flex-col justify-center">
         <div className="flex items-center gap-2 mb-4 text-orange-400 text-xs font-semibold uppercase tracking-wider">
           <Sparkles className="w-4 h-4" />
           <span>Configure Your Routine</span>
@@ -82,7 +82,7 @@ export default function SplashOpening({ onComplete }: SplashOpeningProps) {
               id="onboarding-name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full bg-slate-950/80 border border-slate-800 rounded-lg py-2 px-3 text-sm focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors"
+              className="w-full bg-slate-950/80 border border-white/10 rounded-lg py-2 px-3 text-sm focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors"
               placeholder="e.g. Alex"
               required
             />
@@ -100,7 +100,7 @@ export default function SplashOpening({ onComplete }: SplashOpeningProps) {
                 id="onboarding-curr-weight"
                 value={currentWeight}
                 onChange={(e) => setCurrentWeight(Number(e.target.value))}
-                className="w-full bg-slate-950/80 border border-slate-800 rounded-lg py-2 px-3 text-sm focus:outline-none focus:border-orange-500 transition-colors"
+                className="w-full bg-slate-950/80 border border-white/10 rounded-lg py-2 px-3 text-sm focus:outline-none focus:border-orange-500 transition-colors"
                 required
               />
             </div>
@@ -114,39 +114,9 @@ export default function SplashOpening({ onComplete }: SplashOpeningProps) {
                 id="onboarding-target-weight"
                 value={targetWeight}
                 onChange={(e) => setTargetWeight(Number(e.target.value))}
-                className="w-full bg-slate-950/80 border border-slate-800 rounded-lg py-2 px-3 text-sm focus:outline-none focus:border-orange-500 transition-colors"
+                className="w-full bg-slate-950/80 border border-white/10 rounded-lg py-2 px-3 text-sm focus:outline-none focus:border-orange-500 transition-colors"
                 required
               />
-            </div>
-          </div>
-
-          {/* Dynamic palette selector */}
-          <div>
-            <label className="block text-xs font-medium text-slate-400 uppercase tracking-wider mb-1.5 flex items-center gap-1">
-              <Palette className="w-3.5 h-3.5 text-orange-400" />
-              <span>Choose Color Palette</span>
-            </label>
-            <div className="grid grid-cols-4 gap-1.5">
-              {themesList.map((t) => {
-                const isSel = selectedTheme === t.id;
-                return (
-                  <button
-                    key={t.id}
-                    type="button"
-                    onClick={() => setSelectedTheme(t.id)}
-                    className={`flex flex-col items-center justify-center p-2 rounded-lg border text-center transition-all ${
-                      isSel 
-                        ? 'border-white bg-slate-800 ring-1 ring-white/10' 
-                        : 'border-slate-800 bg-slate-950/50 hover:bg-slate-900'
-                    }`}
-                  >
-                    <span className={`w-3.5 h-3.5 rounded-full ${t.color} border border-slate-900 shadow-sm`} />
-                    <span className="text-[9px] text-slate-400 font-medium scale-90 whitespace-nowrap overflow-hidden text-ellipsis max-w-full mt-1">
-                      {t.label.split(' ')[0]}
-                    </span>
-                  </button>
-                );
-              })}
             </div>
           </div>
 
@@ -162,7 +132,7 @@ export default function SplashOpening({ onComplete }: SplashOpeningProps) {
                 id="onboarding-calories"
                 value={dailyCalorieTarget}
                 onChange={(e) => setDailyCalorieTarget(Number(e.target.value))}
-                className="w-full bg-slate-950/80 border border-slate-800 rounded-lg py-2 px-3 text-sm focus:outline-none focus:border-orange-500 transition-colors"
+                className="w-full bg-slate-950/80 border border-white/10 rounded-lg py-2 px-3 text-sm focus:outline-none focus:border-orange-500 transition-colors"
                 required
               />
             </div>
@@ -176,7 +146,7 @@ export default function SplashOpening({ onComplete }: SplashOpeningProps) {
                 id="onboarding-water"
                 value={waterTargetMl}
                 onChange={(e) => setWaterTargetMl(Number(e.target.value))}
-                className="w-full bg-slate-950/80 border border-slate-800 rounded-lg py-2 px-3 text-sm focus:outline-none focus:border-orange-500 transition-colors"
+                className="w-full bg-slate-950/80 border border-white/10 rounded-lg py-2 px-3 text-sm focus:outline-none focus:border-orange-500 transition-colors"
                 required
               />
             </div>
@@ -199,7 +169,7 @@ export default function SplashOpening({ onComplete }: SplashOpeningProps) {
                     className={`flex flex-col items-start p-2.5 rounded-xl border text-left transition-all ${
                       isActive
                         ? 'border-orange-500 bg-orange-950/30 ring-1 ring-orange-500'
-                        : 'border-slate-800 bg-slate-950/40 hover:bg-slate-950/80'
+                        : 'border-white/10 bg-slate-950/40 hover:bg-slate-950/80'
                     }`}
                   >
                     <div className="flex items-center gap-1.5 justify-between w-full">
@@ -220,21 +190,12 @@ export default function SplashOpening({ onComplete }: SplashOpeningProps) {
             id="onboarding-start-btn"
             className="w-full mt-2 bg-gradient-to-r from-amber-500 to-rose-600 hover:opacity-95 active:scale-98 text-white rounded-xl py-3 font-semibold text-sm flex items-center justify-center gap-2 shadow-lg shadow-orange-600/20 transition-all cursor-pointer"
           >
-            <span>Enter App Workspace</span>
+            <span>Start Using Hour Zero</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </form>
       </div>
 
-      {/* iOS App Shell Footer Info */}
-      <div className="text-center pb-2 text-[11px] text-slate-500 flex flex-col items-center">
-        <p className="flex items-center gap-1 text-slate-400 font-medium">
-          💡 <span>Works as premium iOS Progressive Web App (PWA)</span>
-        </p>
-        <p className="mt-1 leading-normal max-w-xs text-slate-500">
-          All records persist inside iPhone Local Storage automatically. Offline-ready and zero setup required.
-        </p>
-      </div>
     </div>
   );
 }

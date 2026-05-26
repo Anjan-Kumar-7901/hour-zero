@@ -70,51 +70,70 @@ export interface AppThemeConfig {
 export const HourZeroThemes: Record<string, AppThemeConfig> = {
   charcoal: {
     id: 'charcoal',
-    name: 'Charcoal Amber',
-    bg: 'bg-slate-950',
-    cardBg: 'bg-slate-900/80',
-    borderColor: 'border-slate-800/80',
-    primary: 'text-orange-400',
-    accent: 'bg-orange-600 hover:bg-orange-500',
-    accentGradient: 'from-amber-500 via-orange-600 to-rose-600',
-    glow: 'shadow-orange-500/10',
-    badge: 'text-orange-400 bg-orange-950/40 border-orange-850/60'
+    name: 'Dark',
+
+    bg: 'bg-[#0B0B0F]',
+
+    cardBg: 'bg-[#16181D]',
+
+    borderColor: 'border-white/10',
+
+    primary: 'text-[#FF8A00]',
+
+    accent: 'bg-[#FF8A00] hover:bg-[#FF9F26]',
+
+    accentGradient:
+      'from-[#FFB547] via-[#FF8A00] to-[#FF5E00]',
+
+    glow: 'shadow-[0_0_25px_rgba(255,138,0,0.15)]',
+
+    badge:
+      'text-[#FFB547] bg-[#2A1A0A] border-[#FF8A00]/20'
   },
+
   midnight: {
     id: 'midnight',
-    name: 'Midnight Indigo',
-    bg: 'bg-zinc-950',
-    cardBg: 'bg-indigo-950/40',
-    borderColor: 'border-indigo-900/40',
-    primary: 'text-indigo-400',
-    accent: 'bg-indigo-600 hover:bg-indigo-500',
-    accentGradient: 'from-blue-600 via-indigo-600 to-violet-600',
-    glow: 'shadow-indigo-500/15',
-    badge: 'text-indigo-400 bg-indigo-950/40 border-indigo-900/40'
+    name: 'OLED Black',
+    bg: 'bg-[#0B0B0F]',
+    cardBg: 'bg-[#16181D]',
+    borderColor: 'border-white/10',
+    primary: 'text-[#FF8A00]',
+    accent: 'bg-[#FF8A00] hover:bg-[#FF9F26]',
+    accentGradient:
+      'from-[#FFB547] via-[#FF8A00] to-[#FF5E00]',
+    glow: 'shadow-[0_0_25px_rgba(255,138,0,0.15)]',
+    badge:
+      'text-[#FFB547] bg-[#2A1A0A] border-[#FF8A00]/20'
   },
+
   forest: {
     id: 'forest',
-    name: 'Forest Emerald',
-    bg: 'bg-stone-950',
-    cardBg: 'bg-emerald-950/30',
-    borderColor: 'border-emerald-900/45',
-    primary: 'text-emerald-400',
-    accent: 'bg-emerald-600 hover:bg-emerald-500',
-    accentGradient: 'from-teal-500 via-emerald-600 to-green-600',
-    glow: 'shadow-emerald-500/10',
-    badge: 'text-emerald-400 bg-emerald-950/40 border-emerald-900/40'
+    name: 'Midnight',
+    bg: 'bg-[#0B0B0F]',
+    cardBg: 'bg-[#16181D]',
+    borderColor: 'border-white/10',
+    primary: 'text-[#FF8A00]',
+    accent: 'bg-[#FF8A00] hover:bg-[#FF9F26]',
+    accentGradient:
+      'from-[#FFB547] via-[#FF8A00] to-[#FF5E00]',
+    glow: 'shadow-[0_0_25px_rgba(255,138,0,0.15)]',
+    badge:
+      'text-[#FFB547] bg-[#2A1A0A] border-[#FF8A00]/20'
   },
+
   amethyst: {
     id: 'amethyst',
-    name: 'Deep Amethyst',
-    bg: 'bg-slate-950',
-    cardBg: 'bg-purple-950/30',
-    borderColor: 'border-purple-900/45',
-    primary: 'text-purple-400',
-    accent: 'bg-purple-600 hover:bg-purple-500',
-    accentGradient: 'from-fuchsia-600 via-purple-600 to-violet-600',
-    glow: 'shadow-purple-500/10',
-    badge: 'text-purple-400 bg-purple-950/40 border-purple-900/40'
+    name: 'Carbon',
+    bg: 'bg-[#0B0B0F]',
+    cardBg: 'bg-[#16181D]',
+    borderColor: 'border-white/10',
+    primary: 'text-[#FF8A00]',
+    accent: 'bg-[#FF8A00] hover:bg-[#FF9F26]',
+    accentGradient:
+      'from-[#FFB547] via-[#FF8A00] to-[#FF5E00]',
+    glow: 'shadow-[0_0_25px_rgba(255,138,0,0.15)]',
+    badge:
+      'text-[#FFB547] bg-[#2A1A0A] border-[#FF8A00]/20'
   }
 };
 

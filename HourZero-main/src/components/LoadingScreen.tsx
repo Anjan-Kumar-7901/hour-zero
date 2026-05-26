@@ -15,10 +15,10 @@ export default function LoadingScreen({ onBootFinished }: LoadingScreenProps) {
   const [currentStep, setCurrentStep] = useState(0);
 
   const steps = [
-    'Connecting securely with Local Storage buffers...',
-    'Calibrating metabolic bio-sync algorithms...',
-    'Synthesizing timing grids & circadian offset curves...',
-    'Securing HourZero telemetry...'
+    'Preparing your fasting dashboard...',
+    'Loading progress history...',
+    'Syncing fasting insights...',
+    'Starting Hour Zero...'
   ];
 
   useEffect(() => {
@@ -71,7 +71,7 @@ export default function LoadingScreen({ onBootFinished }: LoadingScreenProps) {
             HourZero
           </h2>
           <span className="text-[10px] font-mono tracking-[0.2em] font-extrabold text-orange-500/80 uppercase">
-            Autophagy & Timing Engine
+            Precision Fasting Companion
           </span>
         </div>
       </div>
@@ -100,7 +100,7 @@ export default function LoadingScreen({ onBootFinished }: LoadingScreenProps) {
 
         {/* Tactical status details */}
         <p className="text-[9px] text-slate-600 text-center uppercase tracking-tight font-semibold">
-          💡 Double-tap home screen to sync offline cache
+          Built for focus, consistency and longevity.
         </p>
       </div>
     </div>
