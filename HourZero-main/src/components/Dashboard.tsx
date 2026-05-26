@@ -66,9 +66,9 @@ export default function Dashboard({
   const renderWeightChart = () => {
     if (sortedWeights.length < 2) {
       return (
-        <div className="flex flex-col items-center justify-center h-48 bg-slate-950/40 border border-slate-850 rounded-xl">
+        <div className="flex flex-col items-center justify-center h-48 bg-slate-950/40 border border-white/10 rounded-xl">
           <TrendingDown className="w-8 h-8 text-slate-600 mb-2" />
-          <span className="text-xs text-slate-500">Need at least 2 logged weights to trace chart.</span>
+          <span className="text-xs text-slate-500">Add two weight entries to see progress.</span>
         </div>
       );
     }
@@ -220,7 +220,7 @@ export default function Dashboard({
     <div id="dashboard-tab" className="p-4 bg-slate-950 text-white scrollbar-thin overflow-y-auto h-full space-y-5">
       {/* Prime Statistics HUD Grid */}
       <div className="grid grid-cols-2 gap-3">
-        <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 flex items-center gap-3">
+        <div className="bg-slate-900 border border-white/10rounded-xl p-3 flex items-center gap-3">
           <div className="bg-orange-500/10 p-2.5 rounded-lg text-orange-400 shrink-0">
             <Award className="w-5 h-5" />
           </div>
@@ -231,8 +231,8 @@ export default function Dashboard({
           </div>
         </div>
 
-        <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 flex items-center gap-3">
-          <div className="bg-cyan-500/10 p-2.5 rounded-lg text-cyan-400 shrink-0">
+        <div className="bg-slate-900 border border-white/10 rounded-xl p-3 flex items-center gap-3">
+          <div className="bg-orange-500/10 p-2.5 rounded-lg text-orange-400 shrink-0">
             <Activity className="w-5 h-5" />
           </div>
           <div>
@@ -242,8 +242,8 @@ export default function Dashboard({
           </div>
         </div>
 
-        <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 flex items-center gap-3">
-          <div className="bg-emerald-500/15 p-2.5 rounded-lg text-emerald-400 shrink-0">
+        <div className="bg-slate-900 border border-white/10 rounded-xl p-3 flex items-center gap-3">
+          <div className="bg-orange-500/15 p-2.5 rounded-lg text-orange-400 shrink-0">
             <CheckCircle2 className="w-5 h-5" />
           </div>
           <div>
@@ -253,8 +253,8 @@ export default function Dashboard({
           </div>
         </div>
 
-        <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 flex items-center gap-3">
-          <div className="bg-purple-500/10 p-2.5 rounded-lg text-purple-400 shrink-0">
+        <div className="bg-slate-900 border border-white/10 rounded-xl p-3 flex items-center gap-3">
+          <div className="bg-orange-500/10 p-2.5 rounded-lg text-orange-400 shrink-0">
             <Smile className="w-5 h-5" />
           </div>
           <div>
@@ -266,7 +266,7 @@ export default function Dashboard({
       </div>
 
       {/* Weight Progress Chart & Logger Card */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-xl space-y-4">
+      <div className="bg-slate-900 border border-white/10 rounded-2xl p-4 shadow-xl space-y-4">
         <div className="flex justify-between items-center">
           <div>
             <h3 className="text-xs font-semibold text-slate-300 uppercase tracking-widest flex items-center gap-1.5">
@@ -283,7 +283,7 @@ export default function Dashboard({
         {renderWeightChart()}
 
         {/* Dynamic Weight Quick Logger Widget */}
-        <form onSubmit={handleWeightSubmit} className="flex gap-2 items-center bg-slate-950/40 p-2.5 border border-slate-850 rounded-xl">
+        <form onSubmit={handleWeightSubmit} className="flex gap-2 items-center bg-slate-950/40 p-2.5 border border-white/10 rounded-xl">
           <span className="text-xs text-slate-300 flex-grow font-medium">Log your weight today:</span>
           <div className="flex gap-1.5 items-center">
             <input
@@ -292,7 +292,7 @@ export default function Dashboard({
               value={newWeight}
               id="log-weight-input"
               onChange={(e) => setNewWeight(e.target.value)}
-              className="w-16 bg-slate-950 border border-slate-800 py-1 text-center font-bold font-mono rounded text-xs focus:ring-1 focus:ring-orange-500 focus:outline-none"
+              className="w-16 bg-slate-950 border border-white/10 py-1 text-center font-bold font-mono rounded text-xs focus:ring-1 focus:ring-orange-500 focus:outline-none"
             />
             <span className="text-xs text-slate-400 font-mono">kg</span>
             <button
@@ -307,7 +307,7 @@ export default function Dashboard({
       </div>
 
       {/* Consistency block grid */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-xl">
+      <div className="bg-slate-900 border border-white/10 rounded-2xl p-4 shadow-xl">
         <h3 className="text-xs font-semibold text-slate-300 uppercase tracking-widest mb-3 flex items-center gap-1.5">
           <Calendar className="w-4 h-4 text-emerald-400" />
           <span>Fasting Consistency grid</span>
@@ -334,7 +334,7 @@ export default function Dashboard({
             
             if (session) {
               if (session.wasSuccessful) {
-                color = 'bg-emerald-500/20 border-emerald-500/40 text-emerald-400';
+                color = 'bg-orange-500/15 border-orange-500/30 text-emerald-400';
                 label = 'Success';
               } else {
                 color = 'bg-rose-500/20 border-rose-500/30 text-rose-400';
@@ -363,7 +363,7 @@ export default function Dashboard({
 
         <div className="flex justify-center gap-4 text-[9px] text-slate-500">
           <div className="flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 bg-emerald-500/20 border border-emerald-500/40 rounded" />
+            <span className="w-2.5 h-2.5 bg-orange-500/15 border border-orange-500/30 rounded" />
             <span>Target Hit</span>
           </div>
           <div className="flex items-center gap-1.5">
@@ -371,14 +371,14 @@ export default function Dashboard({
             <span>Ended Early</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 bg-slate-950 border border-slate-850 rounded" />
+            <span className="w-2.5 h-2.5 bg-slate-950 border border-white/10 rounded" />
             <span>Rest Day</span>
           </div>
         </div>
       </div>
 
       {/* History log lines CRUD list */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-xl">
+      <div className="bg-slate-900 border border-white/10 rounded-2xl p-4 shadow-xl">
         <h3 className="text-xs font-semibold text-slate-300 uppercase tracking-widest mb-3">
           Completed Fasting Loops
         </h3>
@@ -421,7 +421,7 @@ export default function Dashboard({
                     </p>
 
                     {item.notes && (
-                      <p className="text-[11px] text-slate-400 italic bg-slate-950/40 p-1.5 rounded border border-slate-850 max-w-sm">
+                      <p className="text-[11px] text-slate-400 italic bg-slate-950/40 p-1.5 rounded border border-white/10 max-w-sm">
                         "{item.notes}"
                       </p>
                     )}
