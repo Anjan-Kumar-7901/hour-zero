@@ -1,0 +1,6 @@
+{
+  "name": "HourZero",
+  "description": "An iOS-styled Progressive Web App for tracking intermittent fasting intervals, logging meals/calories, and charting consistency with custom themes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
